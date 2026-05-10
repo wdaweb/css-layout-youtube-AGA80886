@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      body {
+        background-color: #000;
+      }
+
+      .header {
+        height: 60px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px 15px;
+      }
+
+      #menu {
+        color: white;
+        vertical-align: middle;
+        margin: 15px;
+        /* padding: 5px; */
+      }
+
+      .fa-brands {
+        color: red;
+        vertical-align: middle;
+        margin: 15px 0px 15px 15px;
+      }
+
+      .yt {
+        color: white;
+        text-decoration: none;
+        font-size: 24px;
+      }
+
+      .left,
+      .middle,
+      .right {
+        display: flex;
+        align-items: center;
+      }
+
+      .middle input {
+        width: 600px;
+        height: 40px;
+      }
+
+      .right {
+        color: white;
+        margin-right: 40px;
+      }
+
+      .right img {
+        border-radius: 50%;
+        width: 40px;
+        margin-left: 15px;
+      }
+
+      .sidebar {
+        width: 200px;
+        height: calc(100vh - 60px);
+        overflow: hidden;
+        position: fixed;
+        left: 0;
+        top: 60px;
+        color: white;
+      }
+
+      .sidebar:hover {
+        overflow: auto;
+      }
+
+      .sidebar p {
+        font-size: 18px;
+        font-weight: bolder;
+      }
+
+      .sidebar img {
+        border-radius: 50%;
+        width: 25px;
+        margin-right: 20px;
+      }
+
+      .sidebar a {
+        display: block;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 18px;
+        color: white;
+        /* text-align: center; */
+        line-height: 20px;
+      }
+
+      .sidebar a:hover {
+        background: #333;
+      }
+
+      #end {
+        font-size: 12px;
+        color: #ccc;
+      }
+
+      .content {
+        width: calc(100vw - 400px);
+        margin-left: 200px;
+        position: relative;
+        top: 60px;
+      }
+
+      #button {
+        color: #fff;
+        border-spacing: 15px 0;
+      }
+
+      #button td {
+        background: #333;
+        border-radius: 15%;
+        padding: 8px;
+        cursor: pointer;
+      }
+
+      #button td:nth-child(1) {
+        background: #fff;
+        color: #000;
+        border-radius: 15%;
+      }
+
+      .view {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .view tr {
+        display: block;
+        width: 500px;
+        height: 300px;
+      }
+
+      .view a {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      .view span {
+        font-size: 13px;
+        color: #ccc;
+        /* letter-spacing: 2px; */
+      }
+
+      .big {
+        border-radius: 5%;
+        width: 480px;
+        height: 250px;
+      }
+
+      .small {
+        border-radius: 50%;
+        width: 40px;
+        vertical-align: middle;
+        margin-right: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="left">
+        <i id="menu" class="fa-solid fa-bars fa-2x"></i>
+        <i class="fa-brands fa-youtube fa-2x"></i>
+        <p><a class="yt" href="#">Youtube</a></p>
+      </div>
+      <div class="middle">
+        <input type="text" placeholder="搜尋" />
+        <button><i class="fa-solid fa-magnifying-glass fa-2x"></i></button>
+      </div>
+      <div class="right">
+        <i class="fa-regular fa-bell fa-2x"></i>
+        <a
+          href="https://zh.wikipedia.org/zh-tw/%E9%87%91%E6%AD%A3%E6%81%A9"
+          target="_blank"
+          ><img src="https://cdn2.ettoday.net/images/8635/8635947.jpg" />
+        </a>
+      </div>
+    </div>
+    <div class="sidebar">
+      <p>
+        <a href="#"><i class="fa-solid fa-house"> 首頁</i></a>
+      </p>
+      <!-- <i class="fa-solid fa-play"> Shorts</i> -->
+      <hr />
+      <h3>訂閱內容 ></h3>
+      <a href="https://www.youtube.com/@tainanjosh"
+        ><img
+          src="https://yt3.googleusercontent.com/ytc/AIdro_kADQT4s9qKfOJZ0fZka--U0CJJP_xzcZKIpnWkyBgUXOo=s160-c-k-c0x00ffffff-no-rj"
+        />
+        台南Josh
+      </a>
+      <br />
+      <a
+        href="https://www.youtube.com/@%E6%B3%A2%E7%89%B9%E7%8E%8B%E5%A5%BD%E5%B8%A5"
+        ><img
+          src="https://yt3.googleusercontent.com/C98TsTDcAjVzrXPHl2cl-nlu2lnML5Q0PKQOzSiC6COBa_4RaicBrIX9XyKkS4CJcwKCuqx5=s160-c-k-c0x00ffffff-no-rj"
+        />
+        波特王好帥</a
+      >
+      <br />
+      <a href="https://www.youtube.com/shasha77"
+        ><img
+          src="https://yt3.googleusercontent.com/BYhYe7AvsjYvm_vdNGLhQdwfFiwsbiUULWhBRIamyIzycoGvV9aIdEa4jOcUFrhrdnJOmuGmlQ=s160-c-k-c0x00ffffff-no-rj"
+        />
+        志祺七七</a
+      >
+      <br />
+      <a href="https://www.youtube.com/@CPBL"
+        ><img
+          src="https://yt3.googleusercontent.com/2lddNmd7akfRY_xIHbroOQM-gjBsWeWyh4c7RY_wFnqAZ0ww13qBAljJIDgxwznwT8SxNjMm=s160-c-k-c0x00ffffff-no-rj"
+        />
+        CPBL 中華職棒</a
+      >
+      <br />
+      <a href="https://www.youtube.com/@rayduenglish"
+        ><img
+          src="https://yt3.googleusercontent.com/eeXtTw-TTXzkT-mw-T6XklPuPeJKyrSdIvUPSw-MaCzQzZpvbaYJbb8RmWUn8MUjVCKZGDZQiQ=s160-c-k-c0x00ffffff-no-rj"
+        />
+        阿滴</a
+      >
+      <br />
+      <hr />
+      <h3>個人中心 ></h3>
+      <p>
+        <a href="#"><i class="fa-solid fa-person"> 你的頻道</i></a>
+      </p>
+      <p>
+        <a href="#"><i class="fa-solid fa-clock-rotate-left"> 觀看紀錄</i></a>
+      </p>
+      <p>
+        <a href="#"><i class="fa-solid fa-list"> 播放清單</i></a>
+      </p>
+      <p>
+        <a href="#"><i class="fa-solid fa-clock"> 稍後觀看</i></a>
+      </p>
+      <p>
+        <a href="#"><i class="fa-solid fa-thumbs-up"> 喜歡的影片</i></a>
+      </p>
+      <p>
+        <a href="#"><i class="fa-solid fa-circle-play"> 你的影片</i></a>
+      </p>
+      <p>
+        <a href="#"><i class="fa-solid fa-download"> 已下載的內容</i></a>
+      </p>
+      <hr />
+      <h3>探索</h3>
+      <p>
+        <a href="#"><i class="fa-solid fa-music"> 音樂</i></a>
+      </p>
+      <p>
+        <a href="#"><i class="fa-solid fa-film"> 電影</i></a>
+      </p>
+      <p>
+        <a href="#"><i class="fa-solid fa-podcast"> 直播</i></a>
+      </p>
+      <p>
+        <a href="#"><i class="fa-solid fa-gamepad"> 遊戲</i></a>
+      </p>
+      <hr />
+      <p>
+        <a href="#"><i class="fa-solid fa-flag"> 檢舉記錄</i></a>
+      </p>
+      <hr />
+      <p id="end">
+        簡介 媒體 著作權 與我們聯絡 創作者 廣告開發人員<br />
+        條款 隱私權政策與安全性 YouTube 運作方式 測試新功能<br />
+        © 2026 Google LLC
+      </p>
+    </div>
+    <div class="content">
+      <table id="button">
+        <tr>
+          <td>全部</td>
+          <td>新聞</td>
+          <td>直播中</td>
+          <td>Podcast</td>
+          <td>音樂</td>
+          <td>合輯</td>
+          <td>最新上傳</td>
+          <td>已觀看</td>
+          <td>讓你耳目一新</td>
+        </tr>
+      </table>
+      <br />
+      <table class="view">
+        <tr>
+          <td>
+            <a
+              href="https://www.youtube.com/watch?v=2hvzgjUjHBk&t"
+              target="_blank"
+            >
+              <img
+                src="https://i.ytimg.com/an_webp/2hvzgjUjHBk/mqdefault_6s.webp?du=3000&sqp=CNvEgNAG&rs=AOn4CLDMvNWwS8Rzt3sPHf1ehFJifOmX6A"
+                class="big"
+              />
+              <br />
+              <img
+                src="https://yt3.ggpht.com/hkCNsUqZGtYD-IO_Vz8AUPYM5BFgzmPicnfFBVUCmpQLQuik6QQA8GX8wtJDScHDpGDwqqFT=s88-c-k-c0x00ffffff-no-rj"
+                class="small"
+              />
+              只花8個月，股價跌了1萬點，無數人從發大財到流落街頭⋯
+              <br />
+              <span
+                >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                小牛講正經&nbsp;&nbsp;&nbsp;
+                <i class="fa-solid fa-play"></i
+                >&nbsp;&nbsp;22萬&nbsp;&nbsp;2周前</span
+              >
+            </a>
+          </td>
+          <td>
+            <a
+              href="https://www.youtube.com/watch?v=9yKaruq41KQ"
+              target="_blank"
+            >
+              <img
+                src="https://i.ytimg.com/an_webp/9yKaruq41KQ/mqdefault_6s.webp?du=3000&sqp=CLD1gNAG&rs=AOn4CLDqqSCcunjU8_ut3b-sCXun5ArZEg"
+                class="big"
+              />
+              <br />
+              <img
+                src="https://yt3.googleusercontent.com/ytc/AIdro_kADQT4s9qKfOJZ0fZka--U0CJJP_xzcZKIpnWkyBgUXOo=s160-c-k-c0x00ffffff-no-rj"
+                class="small"
+              />
+              關於我逃走的那一天！面對家暴的實際經驗分享！
+              <br />
+              <span
+                >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                台南Josh&nbsp;&nbsp;&nbsp;
+                <i class="fa-solid fa-play"></i
+                >&nbsp;&nbsp;131萬&nbsp;&nbsp;3年前</span
+              >
+            </a>
+          </td>
+          <td>
+            <a
+              href="https://www.youtube.com/watch?v=tDr_ZyaHuxQ"
+              target="_blank"
+            >
+              <img
+                src="https://i.ytimg.com/an_webp/tDr_ZyaHuxQ/mqdefault_6s.webp?du=3000&sqp=CLTtgNAG&rs=AOn4CLCPvx-sqywz6OEcM-ssgay1zGP7xQ"
+                class="big"
+              />
+              <br />
+              <img
+                src="https://yt3.ggpht.com/BzdxYKw0kOBddcZfUDxOc7jRh5GUQIG0Fo3jaTxv3yFFvl9nAu3VlelYEoCNNJl9k-cCMUS7CGU=s88-c-k-c0x00ffffff-no-rj"
+                class="small"
+              />
+              光速神威200盜達陣！陳晨威生涯盜壘精選
+              <br />
+              <span
+                >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                史丹利視角的體育世界&nbsp;&nbsp;&nbsp;
+                <i class="fa-solid fa-play"></i
+                >&nbsp;&nbsp;1.8萬&nbsp;&nbsp;1個月前</span
+              >
+            </a>
+          </td>
+        </tr>
+      </table>
+      <br />
+      <br />
+      <br />
+      <table class="view">
+        <tr>
+          <td>
+            <a
+              href="https://www.youtube.com/watch?v=sHMsnm_k3hU"
+              target="_blank"
+            >
+              <img
+                src="https://i.ytimg.com/an_webp/sHMsnm_k3hU/mqdefault_6s.webp?du=3000&sqp=CIKHgdAG&rs=AOn4CLDzR8_Lwny-oaQIOQp-qxIjwqtWGQ"
+                class="big"
+              />
+              <br />
+              <img
+                src="https://yt3.ggpht.com/paWvFI69WZfpUWVoWzxbbKr6GoOsPBi_WqwRoPHwiWdiZsizO-hI0QKThHXni_axAn1riw4j2w=s88-c-k-c0x00ffffff-no-rj"
+                class="small"
+              />
+              女朋友問我，為什麼臺灣旅行要特地安排一天去基隆？
+              <br />
+              <span
+                >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                冷水TV・日本生活與日本文化&nbsp;&nbsp;&nbsp;
+                <i class="fa-solid fa-play"></i
+                >&nbsp;&nbsp;77萬&nbsp;&nbsp;11個月前</span
+              >
+            </a>
+          </td>
+          <td>
+            <a
+              href="https://www.youtube.com/watch?v=xpUIPtpYFFk"
+              target="_blank"
+            >
+              <img
+                src="https://i.ytimg.com/an_webp/xpUIPtpYFFk/mqdefault_6s.webp?du=3000&sqp=CIzngNAG&rs=AOn4CLB2cgO9XMj1k8IWQoGxCTCwB52lpA"
+                class="big"
+              />
+              <br />
+              <img
+                src="https://yt3.googleusercontent.com/eeXtTw-TTXzkT-mw-T6XklPuPeJKyrSdIvUPSw-MaCzQzZpvbaYJbb8RmWUn8MUjVCKZGDZQiQ=s160-c-k-c0x00ffffff-no-rj"
+                class="small"
+              />
+              不用飛日本! 台灣的高價日料有可能比日本好吃嗎?
+              <br />
+              <span
+                >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                阿滴&nbsp;&nbsp;&nbsp;
+                <i class="fa-solid fa-play"></i
+                >&nbsp;&nbsp;31萬&nbsp;&nbsp;3個月前</span
+              >
+            </a>
+          </td>
+          <td>
+            <a
+              href="https://www.youtube.com/watch?v=emr9EFwzEik"
+              target="_blank"
+            >
+              <img
+                src="https://i.ytimg.com/vi/emr9EFwzEik/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLC5vwkYiTYZ9S3QA4glJqKaO2hj2w"
+                class="big"
+              />
+              <br />
+              <img
+                src="https://yt3.ggpht.com/ytc/AIdro_kbEIAyPGyjyQ0Ls-CvtU6on_CbP0rb-eN2H8Ps7YA-7Zw=s88-c-k-c0x00ffffff-no-rj"
+                class="small"
+              />
+              去埃及看金字塔！四角戀的奢華埃及歷險記！
+              <br />
+              <span
+                >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                黃大謙&nbsp;&nbsp;&nbsp;
+                <i class="fa-solid fa-play"></i
+                >&nbsp;&nbsp;106萬&nbsp;&nbsp;2個月前</span
+              >
+            </a>
+          </td>
+        </tr>
+      </table>
+      <br />
+      <br />
+      <br />
+      <table class="view">
+        <tr>
+          <td>
+            <a
+              href="https://www.youtube.com/watch?v=Y8CGXTBu83E"
+              target="_blank"
+            >
+              <img
+                src="https://i.ytimg.com/vi/Y8CGXTBu83E/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBOSX3zKnqdAi7uWpR7XaQzcq3H3g"
+                class="big"
+              />
+              <br />
+              <img
+                src="https://yt3.ggpht.com/p-eIa0ZQzuS-M758cWDY23RFbFMDRSXTZBmteOOhO4giev4e9pmTCy8PfuhPuE0RAkJnN7hRv68=s68-c-k-c0x00ffffff-no-rj"
+                class="small"
+              />
+              全台灣最異國感的都市！中壢車站大冒險。
+              <br />
+              <span
+                >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                RJ&nbsp;&nbsp;&nbsp;
+                <i class="fa-solid fa-play"></i
+                >&nbsp;&nbsp;44萬&nbsp;&nbsp;1個月前</span
+              >
+            </a>
+          </td>
+          <td>
+            <a
+              href="https://www.youtube.com/watch?v=5yPesNa-TP8"
+              target="_blank"
+            >
+              <img
+                src="https://i.ytimg.com/an_webp/5yPesNa-TP8/mqdefault_6s.webp?du=3000&sqp=CIqPgdAG&rs=AOn4CLC9PCYAwpsPXASbei6r_Ev87080Pg"
+                class="big"
+              />
+              <br />
+              <img
+                src="https://yt3.ggpht.com/ytc/AIdro_nrEI7QRBYhcplYKXDUPYD9fwxzvltgdTyH7Znox41goPY=s88-c-k-c0x00ffffff-no-rj"
+                class="small"
+              />
+              1200元组装神机！能干翻2万元冤种游戏本吗？
+              <br />
+              <span
+                >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                极客湾Geekerwan&nbsp;&nbsp;&nbsp;
+                <i class="fa-solid fa-play"></i
+                >&nbsp;&nbsp;102萬&nbsp;&nbsp;2年前</span
+              >
+            </a>
+          </td>
+          <td>
+            <a
+              href="https://www.youtube.com/watch?v=TzdsE-JxQT8"
+              target="_blank"
+            >
+              <img
+                src="https://i.ytimg.com/vi/TzdsE-JxQT8/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAq3hk_OlOh0OH8dsFY7uMk8eRLxw"
+                class="big"
+              />
+              <br />
+              <img
+                src="https://yt3.googleusercontent.com/C98TsTDcAjVzrXPHl2cl-nlu2lnML5Q0PKQOzSiC6COBa_4RaicBrIX9XyKkS4CJcwKCuqx5=s160-c-k-c0x00ffffff-no-rj"
+                class="small"
+              />
+              獨裁的劇本只剩下散場｜2026粉紅特報春季OP完整版
+              <br />
+              <span
+                >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                波特王好帥&nbsp;&nbsp;&nbsp;
+                <i class="fa-solid fa-play"></i
+                >&nbsp;&nbsp;4.1萬&nbsp;&nbsp;1個月前</span
+              >
+            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
